@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Blog</title>
+</head>
+<body>
+{{ Page.title }}
+{% if blog_entries %}
+{% for entry in blog_entries %}
+    <li>
+    {{ entry.content }}
+    </li>
+{% endfor %}
+{% else %}
+<p>No Blogs</p>
+{% endif %}
+<p>blogindex_page.html</p>
+</body>
+</html>
