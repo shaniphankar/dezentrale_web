@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+{% load wagtailcore_tags %}
 <head>
     <meta charset="UTF-8">
     <title>Blog</title>
@@ -9,7 +10,7 @@
 {% if blog_entries %}
 {% for entry in blog_entries %}
     <li>
-    {{ entry.content }}
+    <a href="{% pageurl entry %}">{{ entry.title }}</a>
     </li>
 {% endfor %}
 {% else %}

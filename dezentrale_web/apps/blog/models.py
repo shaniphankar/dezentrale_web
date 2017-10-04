@@ -13,7 +13,7 @@ class BlogPageTag(TaggedItemBase):
 
 class BlogPage(Page):
     content = models.CharField(max_length=255, blank=True, )
-    date = datetime.datetime.now()
+    #date = datetime.datetime.now()
     author = models.CharField(max_length=255, blank=True, )
    # tags = ClusterTaggableManager(through=BlogPageTag, blank=True)
 

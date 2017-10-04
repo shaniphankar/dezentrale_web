@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+{% load wagtailcore_tags %}
 <head>
     <meta charset="UTF-8">
     <title>blog_123</title>
@@ -7,9 +8,10 @@
 <body>
 <p>{{ page.title }}</p>
 <p>{{ page.content }}</p>
-<p>{{ page.date }}</p>
+<p>{{ page.latest_revision_created_at }}</p>
 <p>{{ page.author }}</p>
 <p>{{ page.tags }}</p>
+<a href="{{ page.get_parent.url }}">Back</a>
 <p>blog_page.html</p>
 </body>
 </html>
