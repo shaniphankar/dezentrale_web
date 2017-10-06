@@ -1,31 +1,21 @@
 from django.db import models
 from wagtail.wagtailcore.models import Page
-from wagtail.wagtailadmin.edit_handlers import FieldPanel, MultiFieldPanel
-from modelcluster.contrib.taggit import ClusterTaggableManager
-from taggit.models import TaggedItemBase
-from modelcluster.fields import ParentalKey
-import datetime
-
-
-class BlogPageTag(TaggedItemBase):
-    content_object = ParentalKey('BlogPage', related_name='tagged_items')
+from wagtail.wagtailadmin.edit_handlers import FieldPanel
+from wagtail.wagtailcore.fields import RichTextField
 
 
 class BlogPage(Page):
-    content = models.CharField(max_length=255, blank=True, )
-    #date = datetime.datetime.now()
+    content = RichTextField()
     author = models.CharField(max_length=255, blank=True, )
-   # tags = ClusterTaggableManager(through=BlogPageTag, blank=True)
 
     content_panels = Page.content_panels + [
-        FieldPanel('content', classname="full"),
+        FieldPanel('content'),
         FieldPanel('author', classname="full"),
-        #FieldPanel('tags'),
     ]
 
 
 class BlogIndexPage(Page):
-    intro = models.CharField(max_length=255, blank=True, )
+    intro = models.TextField(max_length=255, blank=True)
     content_panels = Page.content_panels + [
         FieldPanel('intro', classname="full")
     ]
@@ -36,6 +26,3 @@ class BlogIndexPage(Page):
         # Add extra variables and return the updated context
         context['blog_entries'] = BlogPage.objects.descendant_of(self).live()
         return context
-
-
-

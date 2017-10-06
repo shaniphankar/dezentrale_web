@@ -3,11 +3,10 @@
 {% load wagtailcore_tags %}
 <head>
     <meta charset="UTF-8">
-    <title>blog_123</title>
+    <title>{{ page.title }}</title>
 </head>
 <body>
-<p>{{ page.title }}</p>
-<p>{{ page.content }}</p>
+<p>{{ page.content|richtext  }}</p>
 <p>{{ page.latest_revision_created_at }}</p>
 <p>{{ page.author }}</p>
 <p>{{ page.tags }}</p>
