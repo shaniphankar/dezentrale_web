@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+{% load wagtailadmin_tags %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ page.title }}</title>
+</head>
+<body>
+<div>
+<h1>{{ page.heading }}</h1>
+{% if page.subheading %}
+<h2>{{ page.subheading }}</h2>
+{% endif %}
+<p>{{ page.intro }}</p>
+</div>
+<div class="twitter">
+    <a class="twitter-timeline" href="https://twitter.com/dezentrale_eV?ref_src=twsrc%5Etfw"
+    data-width="300" >Tweets by dezentrale_eV</a>
+    <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+</div>
+</body>
+</html>
