@@ -1,23 +1,26 @@
+{% load wagtailcore_tags %}
+
 <!DOCTYPE html>
 <html lang="en">
-{% load wagtailcore_tags %}
-<head>
+  <head>
     <meta charset="UTF-8">
-    <title>Blog</title>
-</head>
-<body>
-{{ Page.title }}
-{% if blog_entries %}
-{% for entry in blog_entries %}
-    <li>
-    <a href="{% pageurl entry %}">{{ entry.title }}</a>
-    </li>
-{% endfor %}
-{% else %}
-<p>No Blogs</p>
-{% endif %}
-<!---[FIXME]
-Rendered for debugging purposes only. Should be removed once we know it works as expected. [#28] ---!>
-<p>blogindex_page.html</p>
-</body>
+    <title>{{ page.title }}</title>
+  </head>
+  <body>
+    {{ page.title }}
+    {% if page.get_children.live %}
+      {% for entry in page.get_children.live %}
+          <li>
+          <a href="{% pageurl entry %}">{{ entry.title }}</a>
+          </li>
+      {% endfor %}
+    {% else %}
+      <p>No Blogs</p>
+    {% endif %}
+    <!--
+    [FIXME]
+    Rendered for debugging purposes only. Should be removed once we know it works as expected. [#28]
+    --!>
+    <p>blogindex_page.html</p>
+  </body>
 </html>
