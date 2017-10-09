@@ -183,7 +183,7 @@ class Common(Configuration):
     INSTALLED_APPS = (
         # Custom
         'dezentrale_web.apps.wagtail_search',
-        'dezentrale_web.apps.blog',
+        'dezentrale_web.apps.blog.apps.BlogConfig',
         # Wagtail
         'wagtail.wagtailforms',
         'wagtail.wagtailredirects',
