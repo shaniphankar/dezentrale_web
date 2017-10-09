@@ -135,8 +135,7 @@ class Common(Configuration):
     TEMPLATES = [
         {
             'BACKEND': 'django.template.backends.django.DjangoTemplates',
-            'DIRS': [
-            os.path.join(BaseDir.BASE_DIR, 'templates'),],
+            'DIRS': [os.path.join(BaseDir.BASE_DIR, 'templates')],
             'APP_DIRS': True,
             'OPTIONS': {
                 'context_processors': [
@@ -185,6 +184,8 @@ class Common(Configuration):
         # Custom
         'dezentrale_web.apps.wagtail_search',
         'dezentrale_web.apps.homepage',
+        'dezentrale_web.apps.blog.apps.BlogConfig',
+
         # Wagtail
         'wagtail.wagtailforms',
         'wagtail.wagtailredirects',
