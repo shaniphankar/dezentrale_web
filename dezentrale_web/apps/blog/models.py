@@ -5,7 +5,7 @@ from wagtail.wagtailcore.fields import RichTextField
 
 
 class BlogPage(Page):
-    content = RichTextField()
+    content = models.TextField()
     author = models.CharField(max_length=255, blank=True, )
 
     content_panels = Page.content_panels + [
@@ -15,7 +15,7 @@ class BlogPage(Page):
 
 
 class BlogIndexPage(Page):
-    intro = models.TextField(max_length=255, blank=True)
+    intro = models.TextField()
     content_panels = Page.content_panels + [
         FieldPanel('intro', classname="full")
     ]
