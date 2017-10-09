@@ -7,8 +7,8 @@ from wagtail.wagtailcore.fields import RichTextField
 class HomePage(Page):
     heading = models.TextField()
     subheading = models.TextField()
-    intro = RichTextField()
-    # FIXME: author as an user, not CharField
+    intro = models.TextField()
+
     content_panels = Page.content_panels + [
         FieldPanel('heading'),
         FieldPanel('subheading'),
