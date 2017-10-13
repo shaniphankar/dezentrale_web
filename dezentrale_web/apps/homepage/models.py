@@ -3,11 +3,19 @@ from wagtail.wagtailcore.models import Page
 from wagtail.wagtailadmin.edit_handlers import FieldPanel
 from wagtail.wagtailcore.fields import RichTextField
 
-
+# TODO: make get_children that way, that it supports the blogs
 class HomePage(Page):
+
+    def get_blog_intro(Page):
+        # wtf
+        entry = Page.get_children.live()
+
+
+
     heading = models.TextField()
     subheading = models.TextField()
     intro = models.TextField()
+    #bloglist = pass #
 
     content_panels = Page.content_panels + [
         FieldPanel('heading'),

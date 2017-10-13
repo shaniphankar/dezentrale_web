@@ -1,5 +1,6 @@
-<!DOCTYPE html>
 {% load wagtailadmin_tags %}
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -17,6 +18,17 @@
     <a class="twitter-timeline" href="https://twitter.com/dezentrale_eV?ref_src=twsrc%5Etfw"
     data-width="300" >Tweets by dezentrale_eV</a>
     <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+</div>
+<div>
+{% if page.bloglist %}
+    <ul>
+{% for blog in page.bloglist %}
+        <li>
+            <p>{{ blog.intro }}</p>
+        </li>
+{% endfor %}
+    </ul>
+{% endif %}
 </div>
 </body>
 </html>
