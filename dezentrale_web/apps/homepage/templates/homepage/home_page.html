@@ -19,16 +19,5 @@
     data-width="300" >Tweets by dezentrale_eV</a>
     <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
 </div>
-<div>
-{% if page.bloglist %}
-    <ul>
-{% for blog in page.bloglist %}
-        <li>
-            <p>{{ blog.intro }}</p>
-        </li>
-{% endfor %}
-    </ul>
-{% endif %}
-</div>
 </body>
 </html>
